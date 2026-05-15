@@ -1,0 +1,157 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "BIZ FACTORY",
+    "description": "BIZ FACTORY is a Telegram group dedicated to sharing paid methods, APIs, tricks, scripts, and coding resources. Members can access various premium tools and information for free. Join to enhance your skills and discover valuable resources.",
+    "version": "1.0.0",
+    "contact": {
+      "name": "BIZ FACTORY Telegram Group",
+      "url": "https://t.me/+NaATB64x9z4zNTZl"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://api.telegram.org",
+      "description": "Telegram API Server"
+    }
+  ],
+  "paths": {
+    "/group/info": {
+      "get": {
+        "summary": "Get BIZ FACTORY group information",
+        "description": "Retrieve information about the BIZ FACTORY Telegram group including available resources, methods, APIs, tricks, scripts, and coding resources shared within the community.",
+        "operationId": "getGroupInfo",
+        "tags": [
+          "Group"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with group information",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "groupName": {
+                      "type": "string",
+                      "example": "BIZ FACTORY"
+                    },
+                    "description": {
+                      "type": "string",
+                      "example": "A Telegram group dedicated to sharing paid methods, APIs, tricks, scripts, and coding resources"
+                    },
+                    "inviteLink": {
+                      "type": "string",
+                      "example": "https://t.me/+NaATB64x9z4zNTZl"
+                    },
+                    "resources": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      },
+                      "example": [
+                        "Paid methods",
+                        "APIs",
+                        "Tricks",
+                        "Scripts",
+                        "Coding resources"
+                      ]
+                    },
+                    "memberCount": {
+                      "type": "integer",
+                      "example": 1000
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Group not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string",
+                      "example": "Group not found"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string",
+                      "example": "Internal server error"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "GroupInfo": {
+        "type": "object",
+        "properties": {
+          "groupName": {
+            "type": "string",
+            "description": "Name of the Telegram group"
+          },
+          "description": {
+            "type": "string",
+            "description": "Description of the group's purpose and offerings"
+          },
+          "inviteLink": {
+            "type": "string",
+            "format": "uri",
+            "description": "Telegram invite link to join the group"
+          },
+          "resources": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "List of resources available in the group"
+          },
+          "memberCount": {
+            "type": "integer",
+            "description": "Number of members in the group"
+          }
+        }
+      },
+      "Error": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string",
+            "description": "Error message"
+          }
+        }
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "Group",
+      "description": "Operations related to BIZ FACTORY Telegram group"
+    }
+  ],
+  "externalDocs": {
+    "description": "Join BIZ FACTORY Telegram Group",
+    "url": "https://t.me/+NaATB64x9z4zNTZl"
+  }
+}

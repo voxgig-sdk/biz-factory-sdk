@@ -1,0 +1,38 @@
+{
+  "existing": {
+    "group": {
+      "GROUP00": {
+        "description": "s32",
+        "group_name": "s33",
+        "invite_link": "s34",
+        "member_count": "s35",
+        "resource": []
+      },
+      "GROUP01": {
+        "description": "s64",
+        "group_name": "s65",
+        "invite_link": "s66",
+        "member_count": "s67",
+        "resource": []
+      },
+      "GROUP02": {
+        "description": "s96",
+        "group_name": "s97",
+        "invite_link": "s98",
+        "member_count": "s99",
+        "resource": []
+      }
+    }
+  },
+  "new": {
+    "group": {
+      "group_ref01": {
+        "description": "sc8",
+        "group_name": "sc9",
+        "invite_link": "sca",
+        "member_count": "scb",
+        "resource": []
+      }
+    }
+  }
+}

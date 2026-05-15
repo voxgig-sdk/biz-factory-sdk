@@ -1,0 +1,61 @@
+# Entity: group
+
+main: kit: entity: group: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "description"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "group_name"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "invite_link"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "member_count"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "resource"
+      req: false
+      type: "`$ARRAY`"
+    }
+  ]
+
+  name: "group"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          method: "GET"
+          orig: "/group/info"
+          parts: [
+            "group"
+            "info"
+          ]
+          select: {
+            "$action": "info"
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

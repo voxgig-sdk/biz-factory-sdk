@@ -1,0 +1,15 @@
+# Guide
+
+guide: {
+  metrics: count: entity: 1
+  metrics: count: path: 1
+  metrics: count: method: 1
+
+  entity: group: {
+    path: "/group/info": {
+      action: "info": {}
+      op: list: method: *GET
+    }
+  }
+
+}
