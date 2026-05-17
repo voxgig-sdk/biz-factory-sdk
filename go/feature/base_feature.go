@@ -1,7 +1,7 @@
 package feature
 
 import (
-	"github.com/voxgig-sdk/biz-factory-sdk/core"
+	"github.com/voxgig-sdk/biz-factory-sdk/go/core"
 )
 
 type BaseFeature struct {

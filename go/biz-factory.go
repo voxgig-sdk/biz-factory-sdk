@@ -1,10 +1,10 @@
 package voxgigbizfactorysdk
 
 import (
-	"github.com/voxgig-sdk/biz-factory-sdk/core"
-	"github.com/voxgig-sdk/biz-factory-sdk/entity"
-	"github.com/voxgig-sdk/biz-factory-sdk/feature"
-	_ "github.com/voxgig-sdk/biz-factory-sdk/utility"
+	"github.com/voxgig-sdk/biz-factory-sdk/go/core"
+	"github.com/voxgig-sdk/biz-factory-sdk/go/entity"
+	"github.com/voxgig-sdk/biz-factory-sdk/go/feature"
+	_ "github.com/voxgig-sdk/biz-factory-sdk/go/utility"
 )
 
 // Type aliases preserve external API.

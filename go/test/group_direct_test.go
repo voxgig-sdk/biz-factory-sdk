@@ -6,8 +6,8 @@ import (
 	"strings"
 	"testing"
 
-	sdk "github.com/voxgig-sdk/biz-factory-sdk"
-	"github.com/voxgig-sdk/biz-factory-sdk/core"
+	sdk "github.com/voxgig-sdk/biz-factory-sdk/go"
+	"github.com/voxgig-sdk/biz-factory-sdk/go/core"
 )
 
 func TestGroupDirect(t *testing.T) {

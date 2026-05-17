@@ -1,6 +1,6 @@
 package utility
 
-import "github.com/voxgig-sdk/biz-factory-sdk/core"
+import "github.com/voxgig-sdk/biz-factory-sdk/go/core"
 
 func init() {
 	core.UtilityRegistrar = registerAll

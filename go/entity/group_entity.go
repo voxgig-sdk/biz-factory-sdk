@@ -1,9 +1,9 @@
 package entity
 
 import (
-	"github.com/voxgig-sdk/biz-factory-sdk/core"
+	"github.com/voxgig-sdk/biz-factory-sdk/go/core"
 
-	vs "github.com/voxgig/struct"
+	vs "github.com/voxgig-sdk/biz-factory-sdk/go/utility/struct"
 )
 
 type GroupEntity struct {
