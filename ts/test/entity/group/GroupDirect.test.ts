@@ -79,14 +79,12 @@ function directSetup(mockres?: any) {
   const env = envOverride({
     'BIZFACTORY_TEST_GROUP_ENTID': {},
     'BIZFACTORY_TEST_LIVE': 'FALSE',
-    'BIZFACTORY_APIKEY': 'NONE',
   })
 
   const live = 'TRUE' === env.BIZFACTORY_TEST_LIVE
 
   if (live) {
     const client = new BizFactorySDK({
-      apikey: env.BIZFACTORY_APIKEY,
     })
 
     let idmap: any = env['BIZFACTORY_TEST_GROUP_ENTID']

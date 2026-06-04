@@ -68,14 +68,12 @@ function group_direct_setup($mockres)
     $env = Runner::env_override([
         "BIZFACTORY_TEST_GROUP_ENTID" => [],
         "BIZFACTORY_TEST_LIVE" => "FALSE",
-        "BIZFACTORY_APIKEY" => "NONE",
     ]);
 
     $live = $env["BIZFACTORY_TEST_LIVE"] === "TRUE";
 
     if ($live) {
         $merged_opts = [
-            "apikey" => $env["BIZFACTORY_APIKEY"],
         ];
         $client = new BizFactorySDK($merged_opts);
         return [

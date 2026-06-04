@@ -17,9 +17,7 @@ loading a specific record.
 ```ts
 import { BizFactorySDK } from 'biz-factory'
 
-const client = new BizFactorySDK({
-  apikey: process.env.BIZ-FACTORY_APIKEY,
-})
+const client = new BizFactorySDK({})
 ```
 
 ### 2. List groups
@@ -84,7 +82,7 @@ const result = await client.Planet().load({ id: 'test01' })
 You can also use the instance method:
 
 ```ts
-const client = new BizFactorySDK({ apikey: '...' })
+const client = new BizFactorySDK()
 const testClient = client.tester()
 ```
 
@@ -120,7 +118,6 @@ const logger = {
 }
 
 const client = new BizFactorySDK({
-  apikey: '...',
   extend: [logger],
 })
 ```
@@ -131,7 +128,6 @@ Create a `.env.local` file at the project root:
 
 ```
 BIZ-FACTORY_TEST_LIVE=TRUE
-BIZ-FACTORY_APIKEY=<your-key>
 ```
 
 Then run:
@@ -149,7 +145,6 @@ cd ts && npm test
 
 ```ts
 new BizFactorySDK(options?: {
-  apikey?: string
   base?: string
   prefix?: string
   suffix?: string
@@ -160,7 +155,6 @@ new BizFactorySDK(options?: {
 
 | Option | Type | Description |
 | --- | --- | --- |
-| `apikey` | `string` | API key for authentication. |
 | `base` | `string` | Base URL of the API server. |
 | `prefix` | `string` | URL path prefix prepended to all requests. |
 | `suffix` | `string` | URL path suffix appended to all requests. |

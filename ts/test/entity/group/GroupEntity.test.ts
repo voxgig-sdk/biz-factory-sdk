@@ -113,7 +113,6 @@ function basicSetup(extra?: any) {
     'BIZ_FACTORY_TEST_GROUP_ENTID': idmap,
     'BIZ_FACTORY_TEST_LIVE': 'FALSE',
     'BIZ_FACTORY_TEST_EXPLAIN': 'FALSE',
-    'BIZ_FACTORY_APIKEY': 'NONE',
   })
 
   idmap = env['BIZ_FACTORY_TEST_GROUP_ENTID']
@@ -123,7 +122,6 @@ function basicSetup(extra?: any) {
   if (live) {
     client = new BizFactorySDK(merge([
       {
-        apikey: env.BIZ_FACTORY_APIKEY,
       },
       extra
     ]))

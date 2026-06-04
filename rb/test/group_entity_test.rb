@@ -83,7 +83,6 @@ def group_basic_setup(extra)
     "BIZFACTORY_TEST_GROUP_ENTID" => idmap,
     "BIZFACTORY_TEST_LIVE" => "FALSE",
     "BIZFACTORY_TEST_EXPLAIN" => "FALSE",
-    "BIZFACTORY_APIKEY" => "NONE",
   })
 
   idmap_resolved = Helpers.to_map(
@@ -95,7 +94,6 @@ def group_basic_setup(extra)
   if env["BIZFACTORY_TEST_LIVE"] == "TRUE"
     merged_opts = Vs.merge([
       {
-        "apikey" => env["BIZFACTORY_APIKEY"],
       },
       extra || {},
     ])

@@ -61,14 +61,12 @@ def _group_direct_setup(mockres):
     env = runner.env_override({
         "BIZFACTORY_TEST_GROUP_ENTID": {},
         "BIZFACTORY_TEST_LIVE": "FALSE",
-        "BIZFACTORY_APIKEY": "NONE",
     })
 
     live = env.get("BIZFACTORY_TEST_LIVE") == "TRUE"
 
     if live:
         merged_opts = {
-            "apikey": env.get("BIZFACTORY_APIKEY"),
         }
         client = BizFactorySDK(merged_opts)
         return {
