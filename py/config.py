@@ -15,6 +15,9 @@ def make_config():
         },
         "options": {
             "base": "https://api.telegram.org",
+            "auth": {
+                "prefix": "Bearer",
+            },
             "headers": {
         "content-type": "application/json",
       },
@@ -26,47 +29,50 @@ def make_config():
       "group": {
         "fields": [
           {
+            "active": True,
             "name": "description",
             "req": False,
             "type": "`$STRING`",
-            "active": True,
             "index$": 0,
           },
           {
+            "active": True,
             "name": "group_name",
             "req": False,
             "type": "`$STRING`",
-            "active": True,
             "index$": 1,
           },
           {
+            "active": True,
             "name": "invite_link",
             "req": False,
             "type": "`$STRING`",
-            "active": True,
             "index$": 2,
           },
           {
+            "active": True,
             "name": "member_count",
             "req": False,
             "type": "`$INTEGER`",
-            "active": True,
             "index$": 3,
           },
           {
+            "active": True,
             "name": "resource",
             "req": False,
             "type": "`$ARRAY`",
-            "active": True,
             "index$": 4,
           },
         ],
         "name": "group",
         "op": {
           "list": {
+            "input": "data",
             "name": "list",
             "points": [
               {
+                "active": True,
+                "args": {},
                 "method": "GET",
                 "orig": "/group/info",
                 "parts": [
@@ -80,12 +86,9 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
-                "active": True,
-                "args": {},
                 "index$": 0,
               },
             ],
-            "input": "data",
             "key$": "list",
           },
         },

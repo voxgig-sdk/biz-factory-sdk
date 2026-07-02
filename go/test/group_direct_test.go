@@ -93,12 +93,14 @@ func groupDirectSetup(mockres any) *groupDirectSetupResult {
 	env := envOverride(map[string]any{
 		"BIZFACTORY_TEST_GROUP_ENTID": map[string]any{},
 		"BIZFACTORY_TEST_LIVE":    "FALSE",
+		"BIZFACTORY_APIKEY":       "NONE",
 	})
 
 	live := env["BIZFACTORY_TEST_LIVE"] == "TRUE"
 
 	if live {
 		mergedOpts := map[string]any{
+			"apikey": env["BIZFACTORY_APIKEY"],
 		}
 		client := sdk.NewBizFactorySDK(mergedOpts)
 

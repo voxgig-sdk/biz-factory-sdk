@@ -17,26 +17,7 @@ main: {
       ]
       title: "BIZ FACTORY"
       version: "1.0.0"
-      tagline: "Community Telegram group sharing paid methods, APIs, scripts, and coding resources"
-      homepage: "https://freepublicapis.com/biz-factory"
-      docs_url: "https://freepublicapis.com/biz-factory"
-      license_short: "No license stated"
-      license_md: `- No formal license is published for the BIZ FACTORY group or its shared resources.
-- The group redistributes third-party paid methods, APIs, and scripts; redistribution rights for that material are not granted by this listing.
-- Treat any code or tooling obtained through the group as use-at-your-own-risk and verify the upstream source's terms before relying on it.`
-      about_md: `BIZ FACTORY is a Telegram community catalogued on [Free Public APIs](https://freepublicapis.com/biz-factory) rather than a structured HTTP API in its own right. The group is dedicated to sharing paid methods, APIs, tricks, scripts, and coding resources contributed by its members.
-
-What's actually available through this listing:
-
-- Access to the Telegram group itself, where members post links, scripts, and discussion.
-- A single sample endpoint documented on the catalogue page — a Facebook video downloader that takes a Facebook URL and returns a downloadable video resource.
-- No published schema, authentication scheme, or rate-limit policy beyond what is shown on the catalogue page.
-
-The \`server\` value \`https://api.telegram.org\` reflects that the community lives on Telegram's platform; programmatic interaction would go through the standard Telegram Bot API, not a bespoke BIZ FACTORY service. The catalogue page reports CORS disabled and a 100% health score over the prior 30 days at the time of listing.`
-      entity_desc: {
-        group: "Represents the BIZ FACTORY Telegram group itself — a member-driven channel for sharing paid methods, APIs, scripts, and coding resources rather than a structured REST resource."
-      }
-      auth: false
     }
   }
 }
+

@@ -1,20 +1,8 @@
 # BizFactory SDK
 
-Community Telegram group sharing paid methods, APIs, scripts, and coding resources
+BIZ FACTORY client, generated from the OpenAPI spec.
 
 > TypeScript, Python, PHP, Golang, Ruby, Lua SDKs, a CLI, an interactive REPL, and an MCP server for AI agents — all generated from one OpenAPI spec by [@voxgig/sdkgen](https://github.com/voxgig/sdkgen).
-
-## About BIZ FACTORY
-
-BIZ FACTORY is a Telegram community catalogued on [Free Public APIs](https://freepublicapis.com/biz-factory) rather than a structured HTTP API in its own right. The group is dedicated to sharing paid methods, APIs, tricks, scripts, and coding resources contributed by its members.
-
-What's actually available through this listing:
-
-- Access to the Telegram group itself, where members post links, scripts, and discussion.
-- A single sample endpoint documented on the catalogue page — a Facebook video downloader that takes a Facebook URL and returns a downloadable video resource.
-- No published schema, authentication scheme, or rate-limit policy beyond what is shown on the catalogue page.
-
-The `server` value `https://api.telegram.org` reflects that the community lives on Telegram's platform; programmatic interaction would go through the standard Telegram Bot API, not a bespoke BIZ FACTORY service. The catalogue page reports CORS disabled and a 100% health score over the prior 30 days at the time of listing.
 
 ## Try it
 
@@ -48,29 +36,31 @@ gem install biz-factory-sdk
 luarocks install biz-factory-sdk
 ```
 
-## 30-second quickstart
+## Quickstart
 
 ### TypeScript
 
 ```ts
 import { BizFactorySDK } from 'biz-factory'
 
-const client = new BizFactorySDK({})
+const client = new BizFactorySDK({
+  apikey: process.env.BIZ-FACTORY_APIKEY,
+})
 
 // List all groups
 const groups = await client.Group().list()
+console.log(groups.data)
 ```
 
-See the [TypeScript README](ts/README.md) for the
-full guide, or scroll down for the same example in other languages.
+See the [TypeScript README](ts/README.md) for the full guide.
 
-## What's in the box
+## Surfaces
 
-| Surface | Use it for | Path |
-| --- | --- | --- |
-| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua) | App integration | `ts/` `py/` `php/` `go/` `rb/` `lua/` |
-| **CLI** | Scripts, CI, ops, one-off API calls | `go-cli/` |
-| **MCP server** | AI agents (Claude, Cursor, Cline) | `go-mcp/` |
+| Surface | Path |
+| --- | --- |
+| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua) | `ts/` `py/` `php/` `go/` `rb/` `lua/` |
+| **CLI** | `go-cli/` |
+| **MCP server** | `go-mcp/` |
 
 ## Use it from an AI agent (MCP)
 
@@ -100,7 +90,7 @@ The API exposes one entity:
 
 | Entity | Description | API path |
 | --- | --- | --- |
-| **Group** | Represents the BIZ FACTORY Telegram group itself — a member-driven channel for sharing paid methods, APIs, scripts, and coding resources rather than a structured REST resource. | `/group/info` |
+| **Group** |  | `/group/info` |
 
 Each entity supports the following operations where available: **load**,
 **list**, **create**, **update**, and **remove**.
@@ -110,12 +100,16 @@ Each entity supports the following operations where available: **load**,
 ### Python
 
 ```python
+import os
 from bizfactory_sdk import BizFactorySDK
 
-client = BizFactorySDK({})
+client = BizFactorySDK({
+    "apikey": os.environ.get("BIZ-FACTORY_APIKEY"),
+})
 
 # List all groups
-groups, err = client.Group(None).list(None, None)
+groups, err = client.Group().list()
+print(groups)
 ```
 
 ### PHP
@@ -124,10 +118,13 @@ groups, err = client.Group(None).list(None, None)
 <?php
 require_once 'bizfactory_sdk.php';
 
-$client = new BizFactorySDK([]);
+$client = new BizFactorySDK([
+    "apikey" => getenv("BIZ-FACTORY_APIKEY"),
+]);
 
 // List all groups
-[$groups, $err] = $client->Group(null)->list(null, null);
+[$groups, $err] = $client->Group()->list();
+print_r($groups);
 ```
 
 ### Golang
@@ -135,10 +132,13 @@ $client = new BizFactorySDK([]);
 ```go
 import sdk "github.com/voxgig-sdk/biz-factory-sdk/go"
 
-client := sdk.NewBizFactorySDK(map[string]any{})
+client := sdk.NewBizFactorySDK(map[string]any{
+    "apikey": os.Getenv("BIZ-FACTORY_APIKEY"),
+})
 
 // List all groups
 groups, err := client.Group(nil).List(nil, nil)
+fmt.Println(groups)
 ```
 
 ### Ruby
@@ -146,10 +146,13 @@ groups, err := client.Group(nil).List(nil, nil)
 ```ruby
 require_relative "BizFactory_sdk"
 
-client = BizFactorySDK.new({})
+client = BizFactorySDK.new({
+  "apikey" => ENV["BIZ-FACTORY_APIKEY"],
+})
 
 # List all groups
-groups, err = client.Group(nil).list(nil, nil)
+groups, err = client.Group().list
+puts groups
 ```
 
 ### Lua
@@ -157,10 +160,13 @@ groups, err = client.Group(nil).list(nil, nil)
 ```lua
 local sdk = require("biz-factory_sdk")
 
-local client = sdk.new({})
+local client = sdk.new({
+  apikey = os.getenv("BIZ-FACTORY_APIKEY"),
+})
 
 -- List all groups
-local groups, err = client:Group(nil):list(nil, nil)
+local groups, err = client:Group():list()
+print(groups)
 ```
 
 ## Unit testing in offline mode
@@ -179,25 +185,21 @@ const result = await client.Group().load({ id: 'test01' })
 ### Python
 
 ```python
-client = BizFactorySDK.test(None, None)
-result, err = client.Group(None).load(
-    {"id": "test01"}, None
-)
+client = BizFactorySDK.test()
+result, err = client.Group().load({"id": "test01"})
 ```
 
 ### PHP
 
 ```php
-$client = BizFactorySDK::test(null, null);
-[$result, $err] = $client->Group(null)->load(
-    ["id" => "test01"], null
-);
+$client = BizFactorySDK::test();
+[$result, $err] = $client->Group()->load(["id" => "test01"]);
 ```
 
 ### Golang
 
 ```go
-client := sdk.TestSDK(nil, nil)
+client := sdk.Test()
 result, err := client.Group(nil).Load(
     map[string]any{"id": "test01"}, nil,
 )
@@ -206,19 +208,15 @@ result, err := client.Group(nil).Load(
 ### Ruby
 
 ```ruby
-client = BizFactorySDK.test(nil, nil)
-result, err = client.Group(nil).load(
-  { "id" => "test01" }, nil
-)
+client = BizFactorySDK.test
+result, err = client.Group().load({ "id" => "test01" })
 ```
 
 ### Lua
 
 ```lua
-local client = sdk.test(nil, nil)
-local result, err = client:Group(nil):load(
-  { id = "test01" }, nil
-)
+local client = sdk.test()
+local result, err = client:Group():load({ id = "test01" })
 ```
 
 ## How it works
@@ -322,14 +320,6 @@ local result, err = client:direct({
 - [Golang](go/README.md)
 - [Ruby](rb/README.md)
 - [Lua](lua/README.md)
-
-## Using the BIZ FACTORY
-
-- Upstream: [https://freepublicapis.com/biz-factory](https://freepublicapis.com/biz-factory)
-
-- No formal license is published for the BIZ FACTORY group or its shared resources.
-- The group redistributes third-party paid methods, APIs, and scripts; redistribution rights for that material are not granted by this listing.
-- Treat any code or tooling obtained through the group as use-at-your-own-risk and verify the upstream source's terms before relying on it.
 
 ---
 

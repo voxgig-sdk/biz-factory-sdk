@@ -38,6 +38,10 @@ class Config {
   options = {
     base: 'https://api.telegram.org',
 
+    auth: {
+      prefix: 'Bearer',
+    },
+
     headers: {
       "content-type": "application/json"
     },
@@ -55,47 +59,50 @@ class Config {
     "group": {
       "fields": [
         {
+          "active": true,
           "name": "description",
           "req": false,
           "type": "`$STRING`",
-          "active": true,
           "index$": 0
         },
         {
+          "active": true,
           "name": "group_name",
           "req": false,
           "type": "`$STRING`",
-          "active": true,
           "index$": 1
         },
         {
+          "active": true,
           "name": "invite_link",
           "req": false,
           "type": "`$STRING`",
-          "active": true,
           "index$": 2
         },
         {
+          "active": true,
           "name": "member_count",
           "req": false,
           "type": "`$INTEGER`",
-          "active": true,
           "index$": 3
         },
         {
+          "active": true,
           "name": "resource",
           "req": false,
           "type": "`$ARRAY`",
-          "active": true,
           "index$": 4
         }
       ],
       "name": "group",
       "op": {
         "list": {
+          "input": "data",
           "name": "list",
           "points": [
             {
+              "active": true,
+              "args": {},
               "method": "GET",
               "orig": "/group/info",
               "parts": [
@@ -109,12 +116,9 @@ class Config {
                 "req": "`reqdata`",
                 "res": "`body`"
               },
-              "active": true,
-              "args": {},
               "index$": 0
             }
           ],
-          "input": "data",
           "key$": "list"
         }
       },

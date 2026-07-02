@@ -119,6 +119,7 @@ func groupBasicSetup(extra map[string]any) *entityTestSetup {
 		"BIZFACTORY_TEST_GROUP_ENTID": idmap,
 		"BIZFACTORY_TEST_LIVE":      "FALSE",
 		"BIZFACTORY_TEST_EXPLAIN":   "FALSE",
+		"BIZFACTORY_APIKEY":         "NONE",
 	})
 
 	idmapResolved := core.ToMapAny(env["BIZFACTORY_TEST_GROUP_ENTID"])
@@ -129,6 +130,7 @@ func groupBasicSetup(extra map[string]any) *entityTestSetup {
 	if env["BIZFACTORY_TEST_LIVE"] == "TRUE" {
 		mergedOpts := vs.Merge([]any{
 			map[string]any{
+				"apikey": env["BIZFACTORY_APIKEY"],
 			},
 			extra,
 		})
