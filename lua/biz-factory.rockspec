@@ -8,12 +8,14 @@ source = {
   dir = "biz-factory-sdk/lua"
 }
 description = {
-  summary = "BizFactory SDK for Lua",
-  license = "MIT"
+  summary = "Unofficial generated Lua SDK for the BIZ FACTORY public API. Not affiliated with or endorsed by the upstream API provider.",
+  homepage = "https://github.com/voxgig-sdk/biz-factory-sdk",
+  issues_url = "https://github.com/voxgig-sdk/biz-factory-sdk/issues",
+  license = "MIT",
+  labels = { "voxgig", "sdk", "generated-sdk", "openapi", "api-client", "biz-factory" }
 }
 dependencies = {
   "lua >= 5.3",
-  "dkjson >= 2.5",
   "dkjson >= 2.5",
 }
 build = {

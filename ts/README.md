@@ -10,7 +10,7 @@ The TypeScript SDK for the BizFactory API — a type-safe, entity-oriented clien
 
 ## Install
 ```bash
-npm install biz-factory
+npm install @voxgig-sdk/biz-factory
 ```
 ## Tutorial: your first API call
 

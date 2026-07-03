@@ -10,13 +10,13 @@ The Ruby SDK for the BizFactory API — an entity-oriented client using idiomati
 
 ## Install
 ```bash
-gem install biz-factory-sdk
+gem install voxgig-sdk-biz-factory
 ```
 
 Or add to your `Gemfile`:
 
 ```ruby
-gem "biz-factory-sdk"
+gem "voxgig-sdk-biz-factory"
 ```
 
 Then run:

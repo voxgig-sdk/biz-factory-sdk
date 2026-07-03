@@ -1,7 +1,23 @@
 {
   "name": "@voxgig-sdk/biz-factory",
   "version": "0.0.1",
-  "description": "DESCRIPTION",
+  "description": "Unofficial generated TypeScript SDK for the BIZ FACTORY public API. Not affiliated with or endorsed by the upstream API provider.",
+  "keywords": [
+    "voxgig",
+    "sdk",
+    "generated-sdk",
+    "openapi",
+    "api-client",
+    "biz-factory"
+  ],
+  "homepage": "https://github.com/voxgig-sdk/biz-factory-sdk#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/voxgig-sdk/biz-factory-sdk.git"
+  },
+  "bugs": {
+    "url": "https://github.com/voxgig-sdk/biz-factory-sdk/issues"
+  },
   "main": "dist/BizFactorySDK.js",
   "type": "commonjs",
   "types": "dist/BizFactorySDK.d.ts",
@@ -14,7 +30,10 @@
     "clean": "rm -rf node_modules yarn.lock package-lock.json",
     "reset": "npm run clean && npm i && npm run build && npm test"
   },
-  "author": "BizFactory",
+  "author": {
+    "name": "Voxgig",
+    "url": "https://voxgig.com"
+  },
   "license": "MIT",
   "dependencies": {},
   "peerDependencies": {},

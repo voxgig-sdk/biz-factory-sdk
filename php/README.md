@@ -10,7 +10,7 @@ The PHP SDK for the BizFactory API — an entity-oriented client using PHP conve
 
 ## Install
 ```bash
-composer require voxgig/biz-factory-sdk
+composer require voxgig-sdk/biz-factory
 ```
 
 

@@ -10,7 +10,7 @@ The Python SDK for the BizFactory API — an entity-oriented client following Py
 
 ## Install
 ```bash
-pip install biz-factory-sdk
+pip install voxgig-sdk-biz-factory
 ```
 
 Or install from source:
