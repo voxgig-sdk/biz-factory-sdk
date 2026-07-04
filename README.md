@@ -26,9 +26,11 @@ import { BizFactorySDK } from '@voxgig-sdk/biz-factory'
 
 const client = new BizFactorySDK()
 
-// List all groups
-const groups = await client.group.list()
-console.log(groups.data)
+// List all groups (returns Group[])
+const groups = await client.Group().list()
+for (const group of groups) {
+  console.log(group)
+}
 ```
 
 See the [TypeScript README](ts/README.md) for the full guide.
@@ -83,9 +85,10 @@ from bizfactory_sdk import BizFactorySDK
 
 client = BizFactorySDK()
 
-# List all groups
-groups = client.group.list()
-print(groups)
+# List all groups (returns a list, raises on error)
+groups = client.Group().list({})
+for group in groups:
+    print(group)
 ```
 
 ### PHP
@@ -96,8 +99,8 @@ require_once 'bizfactory_sdk.php';
 
 $client = new BizFactorySDK();
 
-// List all groups (throws on error)
-$groups = $client->group()->list();
+// List all groups (returns an array; throws on error)
+$groups = $client->Group()->list();
 print_r($groups);
 ```
 
@@ -120,8 +123,8 @@ require_relative "BizFactory_sdk"
 
 client = BizFactorySDK.new
 
-# List all groups
-groups = client.group.list
+# List all groups (returns an Array; raises on error)
+groups = client.Group.list
 puts groups
 ```
 
@@ -133,7 +136,7 @@ local sdk = require("biz-factory_sdk")
 local client = sdk.new()
 
 -- List all groups
-local groups, err = client:group():list()
+local groups, err = client:Group():list()
 print(groups)
 ```
 
@@ -146,22 +149,27 @@ in-memory mock, so unit tests run offline.
 
 ```ts
 const client = BizFactorySDK.test()
-const result = await client.group.load({ id: 'test01' })
-// result.ok === true, result.data contains mock data
+const group = await client.Group().load({ id: 'test01' })
+// group is a bare Group populated with mock data
+console.log(group)
 ```
 
 ### Python
 
 ```python
 client = BizFactorySDK.test()
-result = client.group.load({"id": "test01"})
+group = client.Group().load({"id": "test01"})
+print(group)
 ```
 
 ### PHP
 
 ```php
-$client = BizFactorySDK::test();
-$result = $client->group()->load(["id" => "test01"]);
+// Seed fixture data so offline calls resolve without a live server.
+$client = BizFactorySDK::test([
+    "entity" => ["group" => ["test01" => ["id" => "test01"]]],
+]);
+$group = $client->Group()->load(["id" => "test01"]);
 ```
 
 ### Golang
@@ -176,15 +184,18 @@ result, err := client.Group(nil).Load(
 ### Ruby
 
 ```ruby
-client = BizFactorySDK.test
-result = client.group.load({ "id" => "test01" })
+# Seed fixture data so offline calls resolve without a live server.
+client = BizFactorySDK.test({
+  "entity" => { "group" => { "test01" => { "id" => "test01" } } },
+})
+group = client.Group.load({ "id" => "test01" })
 ```
 
 ### Lua
 
 ```lua
 local client = sdk.test()
-local result, err = client:group():load({ id = "test01" })
+local result, err = client:Group():load({ id = "test01" })
 ```
 
 ## How it works
@@ -232,6 +243,9 @@ const result = await client.direct({
   method: 'GET',
   params: { id: 'example' },
 })
+if (result instanceof Error) {
+  throw result
+}
 console.log(result.data)
 ```
 

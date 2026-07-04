@@ -233,10 +233,10 @@ class BizFactorySDK
 
     private $_group = null;
 
-    // Idiomatic facade: $client->group()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias Group() (PHP method
-    // names are case-insensitive).
-    public function group($data = null)
+    // Canonical facade: $client->Group()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->group()
+    // resolves here too.
+    public function Group($data = null)
     {
         require_once __DIR__ . '/entity/group_entity.php';
         if ($data === null) {

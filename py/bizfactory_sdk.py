@@ -220,25 +220,15 @@ class BizFactorySDK:
         }
 
 
-    @property
-    def group(self):
-        """Idiomatic facade: client.group.list() / client.group.load({"id": ...})."""
-        from entity.group_entity import GroupEntity
-        cached = getattr(self, "_group", None)
-        if cached is None:
-            cached = GroupEntity(self, None)
-            self._group = cached
-        return cached
-
-    def Group(self, data=None):
-        # Deprecated: use client.group instead.
+    def Group(self, data=None) -> "GroupEntity":
+        """Entity factory: client.Group().list({}) / client.Group().load({"id": ...})."""
         from entity.group_entity import GroupEntity
         return GroupEntity(self, data)
 
 
 
     @classmethod
-    def test(cls, testopts=None, sdkopts=None):
+    def test(cls, testopts=None, sdkopts=None) -> "BizFactorySDK":
         if sdkopts is None:
             sdkopts = {}
         sdkopts = vs.clone(sdkopts)
@@ -258,3 +248,9 @@ class BizFactorySDK:
         sdk.mode = "test"
 
         return sdk
+
+
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from entity.group_entity import GroupEntity

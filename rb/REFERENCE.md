@@ -86,7 +86,7 @@ same parameters as `direct()`. Raises on error.
 ## GroupEntity
 
 ```ruby
-group = client.group
+group = client.Group
 ```
 
 ### Fields
@@ -106,7 +106,7 @@ group = client.group
 List entities matching the given criteria. Returns an array. Raises on error.
 
 ```ruby
-results = client.group.list(nil)
+results = client.Group.list(nil)
 ```
 
 ### Common Methods

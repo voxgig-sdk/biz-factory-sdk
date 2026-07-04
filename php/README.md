@@ -29,18 +29,16 @@ require_once 'bizfactory_sdk.php';
 $client = new BizFactorySDK();
 ```
 
-### 2. List groups
+### 2. List group records
 
 ```php
 try {
-    $result = $client->group()->list();
-    if (is_array($result)) {
-        foreach ($result as $item) {
-            $d = $item->data_get();
-            echo $d["id"] . " " . $d["name"] . "\n";
-        }
+    // list() returns an array of Group records — iterate directly.
+    $groups = $client->Group()->list();
+    foreach ($groups as $item) {
+        echo $item["id"] . " " . $item["name"] . "\n";
     }
-} catch (\Exception $err) {
+} catch (\Throwable $err) {
     echo "Error: " . $err->getMessage();
 }
 ```
@@ -86,13 +84,17 @@ print_r($fetchdef["headers"]);
 
 ### Use test mode
 
-Create a mock client for unit testing — no server required:
+Create a mock client for unit testing — no server required. Seed fixture
+data via the `entity` option so offline calls resolve without a live server:
 
 ```php
-$client = BizFactorySDK::test();
+$client = BizFactorySDK::test([
+    "entity" => ["group" => ["test01" => ["id" => "test01"]]],
+]);
 
-$result = $client->group()->load(["id" => "test01"]);
-// $result contains mock response data
+// load() returns the bare mock record (throws on error).
+$group = $client->Group()->load(["id" => "test01"]);
+print_r($group);
 ```
 
 ### Use a custom fetch function
@@ -232,7 +234,7 @@ API path: `/group/info`
 
 ### Group
 
-Create an instance: `const group = client.group`
+Create an instance: `$group = $client->Group();`
 
 #### Operations
 
@@ -252,8 +254,9 @@ Create an instance: `const group = client.group`
 
 #### Example: List
 
-```ts
-const groups = await client.group.list()
+```php
+// list() returns an array of Group records (throws on error).
+$groups = $client->Group()->list();
 ```
 
 
@@ -328,7 +331,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```php
-$group = $client->group();
+$group = $client->Group();
 $group->load(["id" => "example_id"]);
 
 // $group->dataGet() now returns the loaded group data

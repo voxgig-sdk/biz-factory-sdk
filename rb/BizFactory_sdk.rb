@@ -208,13 +208,7 @@ class BizFactorySDK
   end
 
 
-  # Idiomatic facade: client.group.list / client.group.load({ "id" => ... })
-  def group
-    require_relative 'entity/group_entity'
-    @group ||= GroupEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.group instead.
+  # Canonical facade: client.Group.list / client.Group.load({ "id" => ... })
   def Group(data = nil)
     require_relative 'entity/group_entity'
     GroupEntity.new(self, data)

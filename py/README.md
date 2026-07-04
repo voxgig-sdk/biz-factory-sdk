@@ -31,14 +31,16 @@ from bizfactory_sdk import BizFactorySDK
 client = BizFactorySDK()
 ```
 
-### 2. List groups
+### 2. List group records
+
+`list()` returns a `list` of records (each a `dict`) and raises on
+error — iterate it directly.
 
 ```python
 try:
-    result = client.group.list()
-    for item in result:
-        d = item.data_get()
-        print(d["id"], d["name"])
+    groups = client.Group().list({})
+    for group in groups:
+        print(group)
 except Exception as err:
     print(f"list failed: {err}")
 ```
@@ -86,8 +88,9 @@ Create a mock client for unit testing — no server required:
 ```python
 client = BizFactorySDK.test()
 
-result = client.group.load({"id": "test01"})
-# result contains mock response data
+# Entity ops return the bare record and raise on error.
+group = client.Group().load({"id": "test01"})
+# group contains the mock response record
 ```
 
 ### Use a custom fetch function
@@ -224,7 +227,7 @@ API path: `/group/info`
 
 ### Group
 
-Create an instance: `const group = client.group`
+Create an instance: `group = client.Group()`
 
 #### Operations
 
@@ -244,8 +247,8 @@ Create an instance: `const group = client.group`
 
 #### Example: List
 
-```ts
-const groups = await client.group.list()
+```python
+groups = client.Group().list({})
 ```
 
 
@@ -319,7 +322,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```python
-group = client.group
+group = client.Group()
 group.load({"id": "example_id"})
 
 # group.data_get() now returns the loaded group data

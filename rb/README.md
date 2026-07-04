@@ -28,16 +28,14 @@ require_relative "BizFactory_sdk"
 client = BizFactorySDK.new
 ```
 
-### 2. List groups
+### 2. List group records
 
 ```ruby
 begin
-  result = client.group.list
-  if result.is_a?(Array)
-    result.each do |item|
-      d = item.data_get
-      puts "#{d["id"]} #{d["name"]}"
-    end
+  # list returns an Array of Group records — iterate directly.
+  groups = client.Group.list
+  groups.each do |item|
+    puts "#{item["id"]} #{item["name"]}"
   end
 rescue => err
   warn "list failed: #{err}"
@@ -85,13 +83,17 @@ end
 
 ### Use test mode
 
-Create a mock client for unit testing — no server required:
+Create a mock client for unit testing — no server required. Seed fixture
+data via the `entity` option so offline calls resolve without a live server:
 
 ```ruby
-client = BizFactorySDK.test
+client = BizFactorySDK.test({
+  "entity" => { "group" => { "test01" => { "id" => "test01" } } },
+})
 
-result = client.group.load({ "id" => "test01" })
-# result contains mock response data
+# load returns the bare mock record (raises on error).
+group = client.Group.load({ "id" => "test01" })
+puts group
 ```
 
 ### Use a custom fetch function
@@ -227,7 +229,7 @@ API path: `/group/info`
 
 ### Group
 
-Create an instance: `const group = client.group`
+Create an instance: `group = client.Group`
 
 #### Operations
 
@@ -247,8 +249,9 @@ Create an instance: `const group = client.group`
 
 #### Example: List
 
-```ts
-const groups = await client.group.list()
+```ruby
+# list returns an Array of Group records (raises on error).
+groups = client.Group.list
 ```
 
 
@@ -323,7 +326,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```ruby
-group = client.group
+group = client.Group
 group.load({ "id" => "example_id" })
 
 # group.data_get now returns the loaded group data

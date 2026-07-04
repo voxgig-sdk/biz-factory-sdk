@@ -80,7 +80,7 @@ Prepare a fetch definition without sending. Returns the `fetchdef` and raises on
 ## GroupEntity
 
 ```python
-group = client.group
+group = client.Group()
 ```
 
 ### Fields
@@ -100,7 +100,9 @@ group = client.group
 List entities matching the given criteria. Returns a list and raises on error.
 
 ```python
-results = client.group.list({})
+results = client.Group().list({})
+for group in results:
+    print(group)
 ```
 
 ### Common Methods

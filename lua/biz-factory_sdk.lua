@@ -244,8 +244,9 @@ end
 
 
 
--- Idiomatic facade: client:group():list() / client:group():load({ id = ... })
-function BizFactorySDK:group(data)
+-- Idiomatic facade: client:Group():list() / client:Group():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function BizFactorySDK:Group(data)
   local EntityMod = require("entity.group_entity")
   if data == nil then
     if self._group == nil then
@@ -253,12 +254,6 @@ function BizFactorySDK:group(data)
     end
     return self._group
   end
-  return EntityMod.new(self, data)
-end
-
--- Deprecated: use client:group() instead.
-function BizFactorySDK:Group(data)
-  local EntityMod = require("entity.group_entity")
   return EntityMod.new(self, data)
 end
 

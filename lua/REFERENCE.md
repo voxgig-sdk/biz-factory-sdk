@@ -83,7 +83,7 @@ same parameters as `direct()`.
 ## GroupEntity
 
 ```lua
-local group = client:group(nil)
+local group = client:Group(nil)
 ```
 
 ### Fields
@@ -103,7 +103,7 @@ local group = client:group(nil)
 List entities matching the given criteria. Returns an array.
 
 ```lua
-local results, err = client:group():list()
+local results, err = client:Group():list()
 ```
 
 ### Common Methods

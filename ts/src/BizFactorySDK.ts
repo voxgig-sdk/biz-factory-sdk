@@ -204,14 +204,7 @@ class BizFactorySDK {
 
 
 
-  _group?: GroupEntity
-
-  // Idiomatic facade: `client.group.list()` / `client.group.load({ id })`.
-  get group(): GroupEntity {
-    return (this._group ??= new GroupEntity(this, undefined))
-  }
-
-  /** @deprecated Use `client.group` instead. */
+  // Entity access: `client.Group().list()` / `client.Group().load({ id })`.
   Group(data?: any) {
     const self = this
     return new GroupEntity(self,data)

@@ -85,7 +85,7 @@ Prepare a fetch definition without sending the request. Returns the
 ## GroupEntity
 
 ```php
-$group = $client->group();
+$group = $client->Group();
 ```
 
 ### Fields
@@ -105,7 +105,7 @@ $group = $client->group();
 List entities matching the given criteria. Returns an array. Throws on error.
 
 ```php
-$results = $client->group()->list([]);
+$results = $client->Group()->list([]);
 ```
 
 ### Common Methods

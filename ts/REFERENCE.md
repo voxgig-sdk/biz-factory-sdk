@@ -109,7 +109,7 @@ Alias for `BizFactorySDK.test()`.
 ## GroupEntity
 
 ```ts
-const group = client.group
+const group = client.Group()
 ```
 
 ### Fields
@@ -129,7 +129,7 @@ const group = client.group
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.group.list()
+const results = await client.Group().list()
 ```
 
 ### Common Methods
