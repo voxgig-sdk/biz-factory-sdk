@@ -9,9 +9,12 @@ The TypeScript SDK for the BizFactory API — a type-safe, entity-oriented clien
 
 
 ## Install
-```bash
-npm install @voxgig-sdk/biz-factory
-```
+This package is not yet published to npm. Install it from the GitHub
+release tag (`ts/vX.Y.Z`):
+
+- Releases: [https://github.com/voxgig-sdk/biz-factory-sdk/releases](https://github.com/voxgig-sdk/biz-factory-sdk/releases)
+
+
 ## Tutorial: your first API call
 
 This tutorial walks through creating a client, listing entities, and
@@ -20,17 +23,15 @@ loading a specific record.
 ### 1. Create a client
 
 ```ts
-import { BizFactorySDK } from 'biz-factory'
+import { BizFactorySDK } from '@voxgig-sdk/biz-factory'
 
-const client = new BizFactorySDK({
-  apikey: process.env.BIZ-FACTORY_APIKEY,
-})
+const client = new BizFactorySDK()
 ```
 
 ### 2. List groups
 
 ```ts
-const result = await client.Group().list()
+const result = await client.group.list()
 
 if (result.ok) {
   for (const item of result.data) {
@@ -81,7 +82,7 @@ Create a mock client for unit testing — no server required:
 ```ts
 const client = BizFactorySDK.test()
 
-const result = await client.Planet().load({ id: 'test01' })
+const result = await client.group.load({ id: 'test01' })
 // result.ok === true
 // result.data contains mock response data
 ```
@@ -89,7 +90,7 @@ const result = await client.Planet().load({ id: 'test01' })
 You can also use the instance method:
 
 ```ts
-const client = new BizFactorySDK({ apikey: '...' })
+const client = new BizFactorySDK()
 const testClient = client.tester()
 ```
 
@@ -98,7 +99,7 @@ const testClient = client.tester()
 Entity instances remember their last match and data:
 
 ```ts
-const entity = client.Planet()
+const entity = client.group
 
 // First call sets internal match
 await entity.load({ id: 'example' })
@@ -125,7 +126,6 @@ const logger = {
 }
 
 const client = new BizFactorySDK({
-  apikey: '...',
   extend: [logger],
 })
 ```
@@ -135,8 +135,7 @@ const client = new BizFactorySDK({
 Create a `.env.local` file at the project root:
 
 ```
-BIZ-FACTORY_TEST_LIVE=TRUE
-BIZ-FACTORY_APIKEY=<your-key>
+BIZ_FACTORY_TEST_LIVE=TRUE
 ```
 
 Then run:
@@ -154,7 +153,6 @@ cd ts && npm test
 
 ```ts
 new BizFactorySDK(options?: {
-  apikey?: string
   base?: string
   prefix?: string
   suffix?: string
@@ -165,7 +163,6 @@ new BizFactorySDK(options?: {
 
 | Option | Type | Description |
 | --- | --- | --- |
-| `apikey` | `string` | API key for authentication. |
 | `base` | `string` | Base URL of the API server. |
 | `prefix` | `string` | URL path prefix prepended to all requests. |
 | `suffix` | `string` | URL path suffix appended to all requests. |
@@ -272,7 +269,7 @@ API path: `/group/info`
 
 ### Group
 
-Create an instance: `const group = client.Group()`
+Create an instance: `const group = client.group`
 
 #### Operations
 
@@ -293,7 +290,7 @@ Create an instance: `const group = client.Group()`
 #### Example: List
 
 ```ts
-const groups = await client.Group().list()
+const groups = await client.group.list()
 ```
 
 
@@ -354,7 +351,7 @@ biz-factory/
 Import the SDK from the package root:
 
 ```ts
-import { BizFactorySDK } from 'biz-factory'
+import { BizFactorySDK } from '@voxgig-sdk/biz-factory'
 ```
 
 ### Entity state
@@ -364,11 +361,11 @@ stores the returned data and match criteria internally. Subsequent
 calls on the same instance can rely on this state.
 
 ```ts
-const moon = client.Moon()
-await moon.load({ planet_id: 'earth', id: 'luna' })
+const group = client.group
+await group.load({ id: "example_id" })
 
-// moon.data() now returns the loaded moon data
-// moon.match() returns { planet_id: 'earth', id: 'luna' }
+// group.data() now returns the loaded group data
+// group.match() returns { id: "example_id" }
 ```
 
 Call `make()` to create a fresh instance with the same configuration

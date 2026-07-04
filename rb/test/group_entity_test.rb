@@ -43,8 +43,7 @@ class GroupEntityTest < Minitest::Test
     group_ref01_ent = client.Group(nil)
     group_ref01_match = {}
 
-    group_ref01_list_result, err = group_ref01_ent.list(group_ref01_match, nil)
-    assert_nil err
+    group_ref01_list_result = group_ref01_ent.list(group_ref01_match, nil)
     assert group_ref01_list_result.is_a?(Array)
 
   end
@@ -83,7 +82,6 @@ def group_basic_setup(extra)
     "BIZFACTORY_TEST_GROUP_ENTID" => idmap,
     "BIZFACTORY_TEST_LIVE" => "FALSE",
     "BIZFACTORY_TEST_EXPLAIN" => "FALSE",
-    "BIZFACTORY_APIKEY" => "NONE",
   })
 
   idmap_resolved = Helpers.to_map(
@@ -95,7 +93,6 @@ def group_basic_setup(extra)
   if env["BIZFACTORY_TEST_LIVE"] == "TRUE"
     merged_opts = Vs.merge([
       {
-        "apikey" => env["BIZFACTORY_APIKEY"],
       },
       extra || {},
     ])

@@ -245,6 +245,9 @@ func (sdk *BizFactorySDK) Direct(fetchargs map[string]any) (map[string]any, erro
 }
 
 
+// Group returns a Group entity bound to this client.
+// Idiomatic usage: client.Group(nil).List(nil, nil) or
+// client.Group(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *BizFactorySDK) Group(data map[string]any) BizFactoryEntity {
 	return NewGroupEntityFunc(sdk, data)
 }

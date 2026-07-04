@@ -244,6 +244,19 @@ end
 
 
 
+-- Idiomatic facade: client:group():list() / client:group():load({ id = ... })
+function BizFactorySDK:group(data)
+  local EntityMod = require("entity.group_entity")
+  if data == nil then
+    if self._group == nil then
+      self._group = EntityMod.new(self, nil)
+    end
+    return self._group
+  end
+  return EntityMod.new(self, data)
+end
+
+-- Deprecated: use client:group() instead.
 function BizFactorySDK:Group(data)
   local EntityMod = require("entity.group_entity")
   return EntityMod.new(self, data)

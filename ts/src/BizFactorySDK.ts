@@ -2,6 +2,8 @@
 
 import { GroupEntity } from './entity/GroupEntity'
 
+export type * from './BizFactoryTypes'
+
 
 import { inspect } from 'node:util'
 
@@ -202,6 +204,14 @@ class BizFactorySDK {
 
 
 
+  _group?: GroupEntity
+
+  // Idiomatic facade: `client.group.list()` / `client.group.load({ id })`.
+  get group(): GroupEntity {
+    return (this._group ??= new GroupEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.group` instead. */
   Group(data?: any) {
     const self = this
     return new GroupEntity(self,data)

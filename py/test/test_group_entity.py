@@ -50,8 +50,7 @@ class TestGroupEntity:
         group_ref01_ent = client.Group(None)
         group_ref01_match = {}
 
-        group_ref01_list_result, err = group_ref01_ent.list(group_ref01_match, None)
-        assert err is None
+        group_ref01_list_result = group_ref01_ent.list(group_ref01_match, None)
         assert isinstance(group_ref01_list_result, list)
 
 
@@ -92,7 +91,6 @@ def _group_basic_setup(extra):
         "BIZFACTORY_TEST_GROUP_ENTID": idmap,
         "BIZFACTORY_TEST_LIVE": "FALSE",
         "BIZFACTORY_TEST_EXPLAIN": "FALSE",
-        "BIZFACTORY_APIKEY": "NONE",
     })
 
     idmap_resolved = helpers.to_map(
@@ -103,7 +101,6 @@ def _group_basic_setup(extra):
     if env.get("BIZFACTORY_TEST_LIVE") == "TRUE":
         merged_opts = vs.merge([
             {
-                "apikey": env.get("BIZFACTORY_APIKEY"),
             },
             extra or {},
         ])

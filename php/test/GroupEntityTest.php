@@ -50,8 +50,7 @@ class GroupEntityTest extends TestCase
         $group_ref01_ent = $client->Group(null);
         $group_ref01_match = [];
 
-        [$group_ref01_list_result, $err] = $group_ref01_ent->list($group_ref01_match, null);
-        $this->assertNull($err);
+        $group_ref01_list_result = $group_ref01_ent->list($group_ref01_match, null);
         $this->assertIsArray($group_ref01_list_result);
 
     }
@@ -86,7 +85,6 @@ function group_basic_setup($extra)
         "BIZFACTORY_TEST_GROUP_ENTID" => $idmap,
         "BIZFACTORY_TEST_LIVE" => "FALSE",
         "BIZFACTORY_TEST_EXPLAIN" => "FALSE",
-        "BIZFACTORY_APIKEY" => "NONE",
     ]);
 
     $idmap_resolved = Helpers::to_map(
@@ -98,7 +96,6 @@ function group_basic_setup($extra)
     if ($env["BIZFACTORY_TEST_LIVE"] === "TRUE") {
         $merged_opts = Vs::merge([
             [
-                "apikey" => $env["BIZFACTORY_APIKEY"],
             ],
             $extra ?? [],
         ]);

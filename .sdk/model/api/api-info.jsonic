@@ -4,6 +4,7 @@
 main: {
   kit: {
     info: {
+      auth: false
       contact: {
         name: "BIZ FACTORY Telegram Group"
         url: "https://t.me/+NaATB64x9z4zNTZl"

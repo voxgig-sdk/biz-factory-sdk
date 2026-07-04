@@ -81,6 +81,10 @@ end
 
 
 
+---@param reqmatch GroupListMatch
+---@param ctrl? table
+---@return Group[]
+---@return string? err
 function GroupEntity:list(reqmatch, ctrl)
   local utility = self._utility
   local ctx = utility.make_context({
