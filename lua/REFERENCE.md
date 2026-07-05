@@ -90,11 +90,11 @@ local group = client:Group(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `description` | ``$STRING`` | No |  |
-| `group_name` | ``$STRING`` | No |  |
-| `invite_link` | ``$STRING`` | No |  |
-| `member_count` | ``$INTEGER`` | No |  |
-| `resource` | ``$ARRAY`` | No |  |
+| `description` | `string` | No |  |
+| `group_name` | `string` | No |  |
+| `invite_link` | `string` | No |  |
+| `member_count` | `number` | No |  |
+| `resource` | `table` | No |  |
 
 ### Operations
 

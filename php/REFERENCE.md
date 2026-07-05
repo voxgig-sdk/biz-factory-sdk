@@ -8,7 +8,7 @@ Complete API reference for the BizFactory PHP SDK.
 ### Constructor
 
 ```php
-require_once __DIR__ . '/biz-factory_sdk.php';
+require_once __DIR__ . '/bizfactory_sdk.php';
 
 $client = new BizFactorySDK($options);
 ```
@@ -45,11 +45,11 @@ $client = BizFactorySDK::test();
 
 Create a new `GroupEntity` instance. Pass `null` for no initial data.
 
-#### `optionsMap(): array`
+#### `options_map(): array`
 
 Return a deep copy of the current SDK options.
 
-#### `getUtility(): ProjectNameUtility`
+#### `get_utility(): BizFactoryUtility`
 
 Return a copy of the SDK utility object.
 
@@ -92,37 +92,37 @@ $group = $client->Group();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `description` | ``$STRING`` | No |  |
-| `group_name` | ``$STRING`` | No |  |
-| `invite_link` | ``$STRING`` | No |  |
-| `member_count` | ``$INTEGER`` | No |  |
-| `resource` | ``$ARRAY`` | No |  |
+| `description` | `string` | No |  |
+| `group_name` | `string` | No |  |
+| `invite_link` | `string` | No |  |
+| `member_count` | `int` | No |  |
+| `resource` | `array` | No |  |
 
 ### Operations
 
-#### `list(array $reqmatch, ?array $ctrl = null): mixed`
+#### `list(?array $reqmatch = null, ?array $ctrl = null): mixed`
 
-List entities matching the given criteria. Returns an array. Throws on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Throws on error.
 
 ```php
-$results = $client->Group()->list([]);
+$results = $client->Group()->list();
 ```
 
 ### Common Methods
 
-#### `dataGet(): array`
+#### `data_get(): array`
 
 Get the entity data. Returns a copy of the current data.
 
-#### `dataSet($data): void`
+#### `data_set($data): void`
 
 Set the entity data.
 
-#### `matchGet(): array`
+#### `match_get(): array`
 
 Get the entity match criteria.
 
-#### `matchSet($match): void`
+#### `match_set($match): void`
 
 Set the entity match criteria.
 
@@ -131,7 +131,7 @@ Set the entity match criteria.
 Create a new `GroupEntity` instance with the same client and
 options.
 
-#### `getName(): string`
+#### `get_name(): string`
 
 Return the entity name.
 

@@ -221,7 +221,7 @@ class BizFactorySDK:
 
 
     def Group(self, data=None) -> "GroupEntity":
-        """Entity factory: client.Group().list({}) / client.Group().load({"id": ...})."""
+        """Entity factory: client.Group().list() / client.Group().load({"id": ...})."""
         from entity.group_entity import GroupEntity
         return GroupEntity(self, data)
 

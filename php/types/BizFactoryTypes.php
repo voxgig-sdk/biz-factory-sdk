@@ -22,7 +22,7 @@ class Group
     public ?array $resource = null;
 }
 
-/** Match filter for Group#list (any subset of Group fields). */
+/** Request payload for Group#list. */
 class GroupListMatch
 {
     public ?string $description = null;

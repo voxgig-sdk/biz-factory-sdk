@@ -8,7 +8,7 @@ Complete API reference for the BizFactory Python SDK.
 ### Constructor
 
 ```python
-from biz-factory_sdk import BizFactorySDK
+from bizfactory_sdk import BizFactorySDK
 
 client = BizFactorySDK(options)
 ```
@@ -87,20 +87,20 @@ group = client.Group()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `description` | ``$STRING`` | No |  |
-| `group_name` | ``$STRING`` | No |  |
-| `invite_link` | ``$STRING`` | No |  |
-| `member_count` | ``$INTEGER`` | No |  |
-| `resource` | ``$ARRAY`` | No |  |
+| `description` | `str` | No |  |
+| `group_name` | `str` | No |  |
+| `invite_link` | `str` | No |  |
+| `member_count` | `int` | No |  |
+| `resource` | `list` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl=None) -> list`
+#### `list(reqmatch=None, ctrl=None) -> list`
 
-List entities matching the given criteria. Returns a list and raises on error.
+List entities matching the given criteria. The match is optional — call `list()` with no argument to list all records. Returns a list and raises on error.
 
 ```python
-results = client.Group().list({})
+results = client.Group().list()
 for group in results:
     print(group)
 ```

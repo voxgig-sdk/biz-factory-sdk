@@ -33,7 +33,7 @@ Group = Struct.new(
   keyword_init: true
 )
 
-# Match filter for Group#list (any subset of Group fields).
+# Request payload for Group#list.
 #
 # @!attribute [rw] description
 #   @return [String, nil]

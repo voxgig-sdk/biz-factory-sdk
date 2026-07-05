@@ -17,8 +17,7 @@ type Group struct {
 	Resource *[]any `json:"resource,omitempty"`
 }
 
-// GroupListMatch mirrors the group fields as an all-optional match
-// filter (Go analog of Partial<Group>).
+// GroupListMatch is the typed request payload for Group.ListTyped.
 type GroupListMatch struct {
 	Description *string `json:"description,omitempty"`
 	GroupName *string `json:"group_name,omitempty"`

@@ -13,5 +13,11 @@ export interface Group {
   resource?: any[]
 }
 
-export type GroupListMatch = Partial<Group>
+export interface GroupListMatch {
+  description?: string
+  group_name?: string
+  invite_link?: string
+  member_count?: number
+  resource?: any[]
+}
 

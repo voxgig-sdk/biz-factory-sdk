@@ -14,6 +14,11 @@
 ---@field resource? table
 
 ---@class GroupListMatch
+---@field description? string
+---@field group_name? string
+---@field invite_link? string
+---@field member_count? number
+---@field resource? table
 
 local M = {}
 
