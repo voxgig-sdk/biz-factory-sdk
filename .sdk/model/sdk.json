@@ -6,9 +6,6 @@
     },
     "kit": {
       "config": {
-        "auth": {
-          "prefix": "Bearer"
-        },
         "docs_order": [
           "ts",
           "py",
@@ -218,14 +215,17 @@
           "url": "https://t.me/+NaATB64x9z4zNTZl"
         },
         "description": "BIZ FACTORY is a Telegram group dedicated to sharing paid methods, APIs, tricks, scripts, and coding resources. Members can access various premium tools and information for free. Join to enhance your skills and discover valuable resources.",
+        "meta_source": "https://www.freepublicapis.com",
         "servers": [
           {
             "description": "Telegram API Server",
             "url": "https://api.telegram.org"
           }
         ],
+        "summary": "BIZ FACTORY is a Telegram group dedicated to sharing paid methods, APIs, tricks, scripts, and coding resources.",
         "title": "BIZ FACTORY",
-        "version": "1.0.0"
+        "version": "1.0.0",
+        "website": "https://t.me/+NaATB64x9z4zNTZl"
       },
       "option": {},
       "target": {
@@ -278,6 +278,9 @@
           },
           "name": "go-cli",
           "phase": {
+            "agentguide": {
+              "active": false
+            },
             "entity": {
               "active": false
             },
@@ -328,6 +331,9 @@
           },
           "name": "go-mcp",
           "phase": {
+            "agentguide": {
+              "active": false
+            },
             "entity": {
               "active": false
             },

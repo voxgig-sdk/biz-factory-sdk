@@ -91,6 +91,7 @@ same parameters as `Direct()`.
 
 ```go
 group := client.Group(nil)
+fmt.Println(group.GetName()) // "group"
 ```
 
 ### Fields
@@ -111,6 +112,10 @@ List entities matching the given criteria. Returns an array.
 
 ```go
 results, err := client.Group(nil).List(nil, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(results)
 ```
 
 ### Common Methods

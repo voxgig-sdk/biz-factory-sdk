@@ -16,9 +16,9 @@ main: {
           url: "https://api.telegram.org"
         }
       ]
+      summary: "BIZ FACTORY is a Telegram group dedicated to sharing paid methods, APIs, tricks, scripts, and coding resources."
       title: "BIZ FACTORY"
       version: "1.0.0"
+      website: "https://t.me/+NaATB64x9z4zNTZl"
     }
   }
-}
-
