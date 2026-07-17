@@ -1,4 +1,4 @@
--- ProjectName SDK exists test
+-- BizFactory SDK exists test
 
 local sdk = require("biz-factory_sdk")
 

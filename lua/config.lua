@@ -1,4 +1,4 @@
--- ProjectName SDK configuration
+-- BizFactory SDK configuration
 
 local function make_config()
   return {
