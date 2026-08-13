@@ -117,10 +117,30 @@ const group = client.Group()
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `description` | `string` | No |  |
-| `group_name` | `string` | No |  |
-| `invite_link` | `string` | No |  |
-| `member_count` | `number` | No |  |
-| `resource` | `any[]` | No |  |
+| `groupName` | `string` | No |  |
+| `inviteLink` | `string` | No |  |
+| `memberCount` | `number` | No |  |
+| `resources` | `any[]` | No |  |
+
+### Actions
+
+This entity exposes custom API actions in addition to the standard
+operations. Select one with `$action` in the call's argument; the
+remaining keys are sent as that action's payload.
+
+| Action | Route | Call |
+| --- | --- | --- |
+| `info` | `/group/info` | `client.Group().list({ $action: 'info', ... })` |
+
+An action returns that action's OWN response, which is not necessarily a
+Group record — check the API definition for its shape.
+
+```ts
+const result = await client.Group().list({
+  $action: 'info',
+  /* ...the action's own arguments */
+})
+```
 
 ### Operations
 

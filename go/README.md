@@ -261,10 +261,10 @@ Only `Direct()` returns a response envelope — a `map[string]any` with
 | Field | Description |
 | --- | --- |
 | `"description"` |  |
-| `"group_name"` |  |
-| `"invite_link"` |  |
-| `"member_count"` |  |
-| `"resource"` |  |
+| `"groupName"` |  |
+| `"inviteLink"` |  |
+| `"memberCount"` |  |
+| `"resources"` |  |
 
 Operations: List.
 
@@ -290,10 +290,10 @@ Create an instance: `group := client.Group(nil)`
 | Field | Type | Description |
 | --- | --- | --- |
 | `description` | `string` |  |
-| `group_name` | `string` |  |
-| `invite_link` | `string` |  |
-| `member_count` | `int` |  |
-| `resource` | `[]any` |  |
+| `groupName` | `string` |  |
+| `inviteLink` | `string` |  |
+| `memberCount` | `int` |  |
+| `resources` | `[]any` |  |
 
 #### Example: List
 

@@ -35,7 +35,9 @@ const client = new BizFactorySDK()
 
 ### 2. List group records
 
-`list()` resolves to an array of Group objects — iterate it directly:
+`list()` resolves to an array of Group ENTITIES — every operation
+resolves to entities, not raw records. Iterate them directly, and call
+`.data()` on one for the record it holds:
 
 ```ts
 const groups = await client.Group().list()
@@ -120,7 +122,8 @@ Create a mock client for unit testing — no server required:
 const client = BizFactorySDK.test()
 
 const group = await client.Group().list()
-// group is a bare entity populated with mock response data
+// group is the entity, populated with mock response data
+// — call group.data() for the record itself
 console.log(group)
 ```
 
@@ -285,10 +288,10 @@ The `prepare()` method returns:
 | Field | Description |
 | --- | --- |
 | `description` |  |
-| `group_name` |  |
-| `invite_link` |  |
-| `member_count` |  |
-| `resource` |  |
+| `groupName` |  |
+| `inviteLink` |  |
+| `memberCount` |  |
+| `resources` |  |
 
 Operations: list.
 
@@ -314,10 +317,10 @@ Create an instance: `const group = client.Group()`
 | Field | Type | Description |
 | --- | --- | --- |
 | `description` | `string` |  |
-| `group_name` | `string` |  |
-| `invite_link` | `string` |  |
-| `member_count` | `number` |  |
-| `resource` | `any[]` |  |
+| `groupName` | `string` |  |
+| `inviteLink` | `string` |  |
+| `memberCount` | `number` |  |
+| `resources` | `any[]` |  |
 
 #### Example: List
 

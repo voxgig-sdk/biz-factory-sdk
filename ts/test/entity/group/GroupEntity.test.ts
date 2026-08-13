@@ -26,8 +26,8 @@ import {
 describe('GroupEntity', async () => {
 
   // Per-test live pacing. Delay is read from sdk-test-control.json's
-  // `test.live.delayMs`; only sleeps when BIZFACTORY_TEST_LIVE=TRUE.
-  afterEach(liveDelay('BIZFACTORY_TEST_LIVE'))
+  // `test.live.delayMs`; only sleeps when BIZ_FACTORY_TEST_LIVE=TRUE.
+  afterEach(liveDelay('BIZ_FACTORY_TEST_LIVE'))
 
   test('instance', async () => {
     const testsdk = BizFactorySDK.test()
@@ -63,7 +63,7 @@ describe('GroupEntity', async () => {
     const group_ref01_ent = client.Group()
     const group_ref01_match: any = {}
 
-    const group_ref01_list = await group_ref01_ent.list(group_ref01_match)
+    const group_ref01_list = (await group_ref01_ent.list(group_ref01_match)).map((e: any) => e.data())
 
 
   })

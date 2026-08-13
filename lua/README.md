@@ -218,9 +218,9 @@ data **directly** — there is no wrapper:
 
 Check `err` first (it is non-`nil` on failure), then use `value`:
 
-    local group, err = client:Group():load()
+    local group, err = client:Group():list()
     if err then error(err) end
-    -- group is the loaded record
+    -- group is the record list
 
 Only `direct()` returns a response envelope — a `table` with `ok`,
 `status`, `headers`, and `data` keys.
@@ -232,10 +232,10 @@ Only `direct()` returns a response envelope — a `table` with `ok`,
 | Field | Description |
 | --- | --- |
 | `description` |  |
-| `group_name` |  |
-| `invite_link` |  |
-| `member_count` |  |
-| `resource` |  |
+| `groupName` |  |
+| `inviteLink` |  |
+| `memberCount` |  |
+| `resources` |  |
 
 Operations: List.
 
@@ -261,10 +261,10 @@ Create an instance: `local group = client:Group(nil)`
 | Field | Type | Description |
 | --- | --- | --- |
 | `description` | `string` |  |
-| `group_name` | `string` |  |
-| `invite_link` | `string` |  |
-| `member_count` | `number` |  |
-| `resource` | `table` |  |
+| `groupName` | `string` |  |
+| `inviteLink` | `string` |  |
+| `memberCount` | `number` |  |
+| `resources` | `table` |  |
 
 #### Example: List
 

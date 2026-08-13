@@ -1,4 +1,4 @@
-# ProjectName SDK exists test
+# BizFactory SDK exists test
 
 import pytest
 from bizfactory_sdk import BizFactorySDK

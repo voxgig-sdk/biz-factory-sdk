@@ -91,10 +91,10 @@ local group = client:Group(nil)
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `description` | `string` | No |  |
-| `group_name` | `string` | No |  |
-| `invite_link` | `string` | No |  |
-| `member_count` | `number` | No |  |
-| `resource` | `table` | No |  |
+| `groupName` | `string` | No |  |
+| `inviteLink` | `string` | No |  |
+| `memberCount` | `number` | No |  |
+| `resources` | `table` | No |  |
 
 ### Operations
 

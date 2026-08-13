@@ -125,7 +125,8 @@ Create a mock client for unit testing — no server required:
 ```php
 $client = BizFactorySDK::test();
 
-// Entity ops return the bare mock record (throws on error).
+// Entity ops return the ENTITY (throws on error);
+// call data_get() for the mock record.
 $group = $client->Group()->list();
 print_r($group);
 ```
@@ -224,7 +225,7 @@ All entities share the same interface.
 
 ### Result shape
 
-Entity operations return the bare result data (an `array` for single-entity
+Entity operations return the ENTITY (call data_get() for the record) (an `array` for single-entity
 ops, a `list` for `list`) and throw on error. Wrap calls in
 `try`/`catch` to handle failures.
 
@@ -247,10 +248,10 @@ On error, `ok` is `false` and `$err` contains the error value.
 | Field | Description |
 | --- | --- |
 | `description` |  |
-| `group_name` |  |
-| `invite_link` |  |
-| `member_count` |  |
-| `resource` |  |
+| `groupName` |  |
+| `inviteLink` |  |
+| `memberCount` |  |
+| `resources` |  |
 
 Operations: List.
 
@@ -276,10 +277,10 @@ Create an instance: `$group = $client->Group();`
 | Field | Type | Description |
 | --- | --- | --- |
 | `description` | `string` |  |
-| `group_name` | `string` |  |
-| `invite_link` | `string` |  |
-| `member_count` | `int` |  |
-| `resource` | `array` |  |
+| `groupName` | `string` |  |
+| `inviteLink` | `string` |  |
+| `memberCount` | `int` |  |
+| `resources` | `array` |  |
 
 #### Example: List
 

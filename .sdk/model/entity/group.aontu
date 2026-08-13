@@ -11,22 +11,22 @@ main: kit: entity: group: {
       type: "`$STRING`"
     }
     {
-      name: "group_name"
+      name: "groupName"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "invite_link"
+      name: "inviteLink"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "member_count"
+      name: "memberCount"
       req: false
       type: "`$INTEGER`"
     }
     {
-      name: "resource"
+      name: "resources"
       req: false
       type: "`$ARRAY`"
     }
@@ -49,7 +49,7 @@ main: kit: entity: group: {
           }
           transform: {
             req: "`reqdata`"
-            res: "`body`"
+            res: "`body.resources`"
           }
         }
       ]

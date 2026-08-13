@@ -99,10 +99,10 @@ fmt.Println(group.GetName()) // "group"
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `description` | `string` | No |  |
-| `group_name` | `string` | No |  |
-| `invite_link` | `string` | No |  |
-| `member_count` | `int` | No |  |
-| `resource` | `[]any` | No |  |
+| `groupName` | `string` | No |  |
+| `inviteLink` | `string` | No |  |
+| `memberCount` | `int` | No |  |
+| `resources` | `[]any` | No |  |
 
 ### Operations
 

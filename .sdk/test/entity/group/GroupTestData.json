@@ -3,24 +3,24 @@
     "group": {
       "GROUP00": {
         "description": "s32",
-        "group_name": "s33",
-        "invite_link": "s34",
-        "member_count": "s35",
-        "resource": []
+        "groupName": "s33",
+        "inviteLink": "s34",
+        "memberCount": "s35",
+        "resources": []
       },
       "GROUP01": {
         "description": "s64",
-        "group_name": "s65",
-        "invite_link": "s66",
-        "member_count": "s67",
-        "resource": []
+        "groupName": "s65",
+        "inviteLink": "s66",
+        "memberCount": "s67",
+        "resources": []
       },
       "GROUP02": {
         "description": "s96",
-        "group_name": "s97",
-        "invite_link": "s98",
-        "member_count": "s99",
-        "resource": []
+        "groupName": "s97",
+        "inviteLink": "s98",
+        "memberCount": "s99",
+        "resources": []
       }
     }
   },
@@ -28,10 +28,10 @@
     "group": {
       "group_ref01": {
         "description": "sc8",
-        "group_name": "sc9",
-        "invite_link": "sca",
-        "member_count": "scb",
-        "resource": []
+        "groupName": "sc9",
+        "inviteLink": "sca",
+        "memberCount": "scb",
+        "resources": []
       }
     }
   }

@@ -16,11 +16,11 @@
 import pytest
 
 from bizfactory_sdk import BizFactorySDK
-from core.error import BizFactoryError
-from core.result import BizFactoryResult
-from core.response import BizFactoryResponse
-from core.spec import BizFactorySpec
-from feature.base_feature import BizFactoryBaseFeature
+from bizfactory_sdk.core.error import BizFactoryError
+from bizfactory_sdk.core.result import BizFactoryResult
+from bizfactory_sdk.core.response import BizFactoryResponse
+from bizfactory_sdk.core.spec import BizFactorySpec
+from bizfactory_sdk.feature.base_feature import BizFactoryBaseFeature
 
 
 def _client():

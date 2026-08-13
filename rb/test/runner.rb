@@ -23,8 +23,8 @@ module BizFactoryTestRunner
   end
 
   def self.env_override(m)
-    live = getenv("BIZFACTORY_TEST_LIVE")
-    override = getenv("BIZFACTORY_TEST_OVERRIDE")
+    live = getenv("BIZ_FACTORY_TEST_LIVE")
+    override = getenv("BIZ_FACTORY_TEST_OVERRIDE")
 
     if live == "TRUE" || override == "TRUE"
       m.each_key do |key|
@@ -44,8 +44,8 @@ module BizFactoryTestRunner
       end
     end
 
-    explain = getenv("BIZFACTORY_TEST_EXPLAIN")
-    m["BIZFACTORY_TEST_EXPLAIN"] = explain if explain && !explain.empty?
+    explain = getenv("BIZ_FACTORY_TEST_EXPLAIN")
+    m["BIZ_FACTORY_TEST_EXPLAIN"] = explain if explain && !explain.empty?
 
     m
   end

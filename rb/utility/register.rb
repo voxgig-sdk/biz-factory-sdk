@@ -24,6 +24,7 @@ require_relative 'prepare_method'
 require_relative 'prepare_params'
 require_relative 'prepare_path'
 require_relative 'prepare_query'
+require_relative 'graphql'
 require_relative 'result_basic'
 require_relative 'result_body'
 require_relative 'result_headers'
@@ -55,6 +56,8 @@ BizFactoryUtility.registrar = ->(u) {
   u.prepare_params = BizFactoryUtilities::PrepareParams
   u.prepare_path = BizFactoryUtilities::PreparePath
   u.prepare_query = BizFactoryUtilities::PrepareQuery
+  u.graphql_body = BizFactoryUtilities::GraphqlBody
+  u.graphql_errors = BizFactoryUtilities::GraphqlErrors
   u.result_basic = BizFactoryUtilities::ResultBasic
   u.result_body = BizFactoryUtilities::ResultBody
   u.result_headers = BizFactoryUtilities::ResultHeaders

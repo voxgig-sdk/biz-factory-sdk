@@ -37,7 +37,7 @@ class GroupEntity extends BizFactoryEntityBase<Group> {
 
 
 
-  async list(this: any, reqmatch?: GroupListMatch, ctrl?: Control): Promise<Group[]> {
+  async list(this: any, reqmatch?: GroupListMatch, ctrl?: Control): Promise<GroupEntity[]> {
 
     const utility = this._utility
 

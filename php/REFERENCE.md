@@ -93,10 +93,10 @@ $group = $client->Group();
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `description` | `string` | No |  |
-| `group_name` | `string` | No |  |
-| `invite_link` | `string` | No |  |
-| `member_count` | `int` | No |  |
-| `resource` | `array` | No |  |
+| `groupName` | `string` | No |  |
+| `inviteLink` | `string` | No |  |
+| `memberCount` | `int` | No |  |
+| `resources` | `array` | No |  |
 
 ### Operations
 

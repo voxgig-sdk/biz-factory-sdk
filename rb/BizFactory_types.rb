@@ -13,23 +13,23 @@
 # @!attribute [rw] description
 #   @return [String, nil]
 #
-# @!attribute [rw] group_name
+# @!attribute [rw] groupName
 #   @return [String, nil]
 #
-# @!attribute [rw] invite_link
+# @!attribute [rw] inviteLink
 #   @return [String, nil]
 #
-# @!attribute [rw] member_count
+# @!attribute [rw] memberCount
 #   @return [Integer, nil]
 #
-# @!attribute [rw] resource
+# @!attribute [rw] resources
 #   @return [Array, nil]
 Group = Struct.new(
   :description,
-  :group_name,
-  :invite_link,
-  :member_count,
-  :resource,
+  :groupName,
+  :inviteLink,
+  :memberCount,
+  :resources,
   keyword_init: true
 )
 
@@ -38,23 +38,23 @@ Group = Struct.new(
 # @!attribute [rw] description
 #   @return [String, nil]
 #
-# @!attribute [rw] group_name
+# @!attribute [rw] groupName
 #   @return [String, nil]
 #
-# @!attribute [rw] invite_link
+# @!attribute [rw] inviteLink
 #   @return [String, nil]
 #
-# @!attribute [rw] member_count
+# @!attribute [rw] memberCount
 #   @return [Integer, nil]
 #
-# @!attribute [rw] resource
+# @!attribute [rw] resources
 #   @return [Array, nil]
 GroupListMatch = Struct.new(
   :description,
-  :group_name,
-  :invite_link,
-  :member_count,
-  :resource,
+  :groupName,
+  :inviteLink,
+  :memberCount,
+  :resources,
   keyword_init: true
 )
 

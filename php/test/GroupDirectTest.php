@@ -66,11 +66,11 @@ function group_direct_setup($mockres)
     $calls = new \ArrayObject();
 
     $env = Runner::env_override([
-        "BIZFACTORY_TEST_GROUP_ENTID" => [],
-        "BIZFACTORY_TEST_LIVE" => "FALSE",
+        "BIZ_FACTORY_TEST_GROUP_ENTID" => [],
+        "BIZ_FACTORY_TEST_LIVE" => "FALSE",
     ]);
 
-    $live = $env["BIZFACTORY_TEST_LIVE"] === "TRUE";
+    $live = $env["BIZ_FACTORY_TEST_LIVE"] === "TRUE";
 
     if ($live) {
         $merged_opts = [

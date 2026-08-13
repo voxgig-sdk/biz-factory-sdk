@@ -9,6 +9,7 @@ guide: {
     path: "/group/info": {
       action: "info": {}
       op: list: method: *GET
+      op: list: transform: res: *("`body.resources`")|top
     }
   }
 

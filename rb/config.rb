@@ -34,28 +34,28 @@ module BizFactoryConfig
             },
             {
               "active" => true,
-              "name" => "group_name",
+              "name" => "groupName",
               "req" => false,
               "type" => "`$STRING`",
               "index$" => 1,
             },
             {
               "active" => true,
-              "name" => "invite_link",
+              "name" => "inviteLink",
               "req" => false,
               "type" => "`$STRING`",
               "index$" => 2,
             },
             {
               "active" => true,
-              "name" => "member_count",
+              "name" => "memberCount",
               "req" => false,
               "type" => "`$INTEGER`",
               "index$" => 3,
             },
             {
               "active" => true,
-              "name" => "resource",
+              "name" => "resources",
               "req" => false,
               "type" => "`$ARRAY`",
               "index$" => 4,
@@ -70,6 +70,7 @@ module BizFactoryConfig
                 {
                   "active" => true,
                   "args" => {},
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/group/info",
                   "parts" => [
@@ -81,7 +82,7 @@ module BizFactoryConfig
                   },
                   "transform" => {
                     "req" => "`reqdata`",
-                    "res" => "`body`",
+                    "res" => "`body.resources`",
                   },
                   "index$" => 0,
                 },

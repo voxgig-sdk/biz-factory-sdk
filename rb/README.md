@@ -119,7 +119,8 @@ Create a mock client for unit testing — no server required:
 ```ruby
 client = BizFactorySDK.test
 
-# Entity ops return the bare mock record (raises on error).
+# Entity ops return the ENTITY (raises on error);
+# call data_get for the mock record.
 group = client.Group.list()
 puts group
 ```
@@ -237,10 +238,10 @@ returns a result `Hash` with these keys:
 | Field | Description |
 | --- | --- |
 | `description` |  |
-| `group_name` |  |
-| `invite_link` |  |
-| `member_count` |  |
-| `resource` |  |
+| `groupName` |  |
+| `inviteLink` |  |
+| `memberCount` |  |
+| `resources` |  |
 
 Operations: List.
 
@@ -266,10 +267,10 @@ Create an instance: `group = client.Group`
 | Field | Type | Description |
 | --- | --- | --- |
 | `description` | `String` |  |
-| `group_name` | `String` |  |
-| `invite_link` | `String` |  |
-| `member_count` | `Integer` |  |
-| `resource` | `Array` |  |
+| `groupName` | `String` |  |
+| `inviteLink` | `String` |  |
+| `memberCount` | `Integer` |  |
+| `resources` | `Array` |  |
 
 #### Example: List
 

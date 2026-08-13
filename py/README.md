@@ -124,7 +124,8 @@ Create a mock client for unit testing — no server required:
 ```python
 client = BizFactorySDK.test()
 
-# Entity ops return the bare record and raise on error.
+# Entity ops return the ENTITY and raises on error;
+# call data_get() for the record.
 group = client.Group().list()
 # group contains the mock response record
 ```
@@ -220,7 +221,7 @@ All entities share the same interface.
 
 ### Result shape
 
-Entity operations return the bare result data (a `dict` for single-entity
+Entity operations return the ENTITY (call data_get() for the record) (a `dict` for single-entity
 ops, a `list` for `list`) and raise on error. Wrap calls in
 `try`/`except` to handle failures.
 
@@ -243,10 +244,10 @@ On error, `ok` is `False` and `err` contains the error value.
 | Field | Description |
 | --- | --- |
 | `description` |  |
-| `group_name` |  |
-| `invite_link` |  |
-| `member_count` |  |
-| `resource` |  |
+| `groupName` |  |
+| `inviteLink` |  |
+| `memberCount` |  |
+| `resources` |  |
 
 Operations: List.
 
@@ -272,10 +273,10 @@ Create an instance: `group = client.Group()`
 | Field | Type | Description |
 | --- | --- | --- |
 | `description` | `str` |  |
-| `group_name` | `str` |  |
-| `invite_link` | `str` |  |
-| `member_count` | `int` |  |
-| `resource` | `list` |  |
+| `groupName` | `str` |  |
+| `inviteLink` | `str` |  |
+| `memberCount` | `int` |  |
+| `resources` | `list` |  |
 
 #### Example: List
 

@@ -14,12 +14,12 @@ from __future__ import annotations
 
 from urllib.parse import quote
 
-from config import make_config
-from features import _make_feature
-from core.control import BizFactoryControl
-from core.error import BizFactoryError
-from core.result import BizFactoryResult
-from core.spec import BizFactorySpec
+from bizfactory_sdk.config import make_config
+from bizfactory_sdk.features import _make_feature
+from bizfactory_sdk.core.control import BizFactoryControl
+from bizfactory_sdk.core.error import BizFactoryError
+from bizfactory_sdk.core.result import BizFactoryResult
+from bizfactory_sdk.core.spec import BizFactorySpec
 
 
 # True when this SDK was generated with the named feature.

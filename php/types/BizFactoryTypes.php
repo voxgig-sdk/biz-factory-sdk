@@ -16,19 +16,19 @@ declare(strict_types=1);
 class Group
 {
     public ?string $description = null;
-    public ?string $group_name = null;
-    public ?string $invite_link = null;
-    public ?int $member_count = null;
-    public ?array $resource = null;
+    public ?string $groupName = null;
+    public ?string $inviteLink = null;
+    public ?int $memberCount = null;
+    public ?array $resources = null;
 }
 
 /** Request payload for Group#list. */
 class GroupListMatch
 {
     public ?string $description = null;
-    public ?string $group_name = null;
-    public ?string $invite_link = null;
-    public ?int $member_count = null;
-    public ?array $resource = null;
+    public ?string $groupName = null;
+    public ?string $inviteLink = null;
+    public ?int $memberCount = null;
+    public ?array $resources = null;
 }
 

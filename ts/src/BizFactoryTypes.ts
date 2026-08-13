@@ -7,17 +7,23 @@
 
 export interface Group {
   description?: string
-  group_name?: string
-  invite_link?: string
-  member_count?: number
-  resource?: any[]
+  groupName?: string
+  inviteLink?: string
+  memberCount?: number
+  resources?: any[]
 }
 
 export interface GroupListMatch {
   description?: string
-  group_name?: string
-  invite_link?: string
-  member_count?: number
-  resource?: any[]
+  groupName?: string
+  inviteLink?: string
+  memberCount?: number
+  resources?: any[]
+
+  // Selects a custom action instead of the plain list:
+  //   'info'
+  // The remaining keys are that action's own payload.
+  $action?: string
+  [action: string]: any
 }
 

@@ -88,10 +88,10 @@ group = client.Group()
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `description` | `str` | No |  |
-| `group_name` | `str` | No |  |
-| `invite_link` | `str` | No |  |
-| `member_count` | `int` | No |  |
-| `resource` | `list` | No |  |
+| `groupName` | `str` | No |  |
+| `inviteLink` | `str` | No |  |
+| `memberCount` | `int` | No |  |
+| `resources` | `list` | No |  |
 
 ### Operations
 

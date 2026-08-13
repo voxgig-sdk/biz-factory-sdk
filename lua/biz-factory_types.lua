@@ -8,17 +8,17 @@
 
 ---@class Group
 ---@field description? string
----@field group_name? string
----@field invite_link? string
----@field member_count? number
----@field resource? table
+---@field groupName? string
+---@field inviteLink? string
+---@field memberCount? number
+---@field resources? table
 
 ---@class GroupListMatch
 ---@field description? string
----@field group_name? string
----@field invite_link? string
----@field member_count? number
----@field resource? table
+---@field groupName? string
+---@field inviteLink? string
+---@field memberCount? number
+---@field resources? table
 
 local M = {}
 

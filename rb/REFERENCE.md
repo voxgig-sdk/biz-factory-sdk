@@ -94,10 +94,10 @@ group = client.Group
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `description` | `String` | No |  |
-| `group_name` | `String` | No |  |
-| `invite_link` | `String` | No |  |
-| `member_count` | `Integer` | No |  |
-| `resource` | `Array` | No |  |
+| `groupName` | `String` | No |  |
+| `inviteLink` | `String` | No |  |
+| `memberCount` | `Integer` | No |  |
+| `resources` | `Array` | No |  |
 
 ### Operations
 

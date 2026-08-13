@@ -61,11 +61,11 @@ function group_direct_setup(mockres)
   local calls = {}
 
   local env = runner.env_override({
-    ["BIZFACTORY_TEST_GROUP_ENTID"] = {},
-    ["BIZFACTORY_TEST_LIVE"] = "FALSE",
+    ["BIZ_FACTORY_TEST_GROUP_ENTID"] = {},
+    ["BIZ_FACTORY_TEST_LIVE"] = "FALSE",
   })
 
-  local live = env["BIZFACTORY_TEST_LIVE"] == "TRUE"
+  local live = env["BIZ_FACTORY_TEST_LIVE"] == "TRUE"
 
   if live then
     local merged_opts = {
