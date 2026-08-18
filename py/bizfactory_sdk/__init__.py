@@ -23,8 +23,8 @@ class BizFactorySDK:
         utility = BizFactoryUtility()
         self._utility = utility
 
-        from bizfactory_sdk.config import make_config
-        config = make_config()
+        from bizfactory_sdk.config import shared_config
+        config = shared_config()
 
         self._rootctx = utility.make_context({
             "client": self,

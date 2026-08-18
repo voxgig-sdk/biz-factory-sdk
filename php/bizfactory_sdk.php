@@ -40,7 +40,7 @@ class BizFactorySDK
         $utility = new BizFactoryUtility();
         $this->_utility = $utility;
 
-        $config = BizFactoryConfig::make_config();
+        $config = BizFactoryConfig::shared_config();
 
         $this->_rootctx = ($utility->make_context)([
             "client" => $this,

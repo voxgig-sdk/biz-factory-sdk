@@ -23,6 +23,7 @@ build = {
   modules = {
     ["biz-factory_sdk"] = "biz-factory_sdk.lua",
     ["config"] = "config.lua",
+    ["config_shared"] = "config_shared.lua",
     ["features"] = "features.lua",
   }
 }

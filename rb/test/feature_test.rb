@@ -15,7 +15,7 @@ require_relative "../BizFactory_sdk"
 module BizFactoryFeatureHarness
   # True when this SDK was generated with the named feature.
   def self.has_feature?(name)
-    f = BizFactoryConfig.make_config["feature"]
+    f = BizFactoryConfig.shared_config["feature"]
     f.is_a?(Hash) && !f[name].nil?
   end
 

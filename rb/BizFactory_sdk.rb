@@ -28,7 +28,7 @@ class BizFactorySDK
     utility = BizFactoryUtility.new
     @_utility = utility
 
-    config = BizFactoryConfig.make_config
+    config = BizFactoryConfig.shared_config
 
     @_rootctx = utility.make_context.call({
       "client" => self,

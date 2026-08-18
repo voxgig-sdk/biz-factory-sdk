@@ -14,7 +14,7 @@ from __future__ import annotations
 
 from urllib.parse import quote
 
-from bizfactory_sdk.config import make_config
+from bizfactory_sdk.config import shared_config
 from bizfactory_sdk.features import _make_feature
 from bizfactory_sdk.core.control import BizFactoryControl
 from bizfactory_sdk.core.error import BizFactoryError
@@ -24,7 +24,7 @@ from bizfactory_sdk.core.spec import BizFactorySpec
 
 # True when this SDK was generated with the named feature.
 def has_feature(name):
-    feature = make_config().get("feature")
+    feature = shared_config().get("feature")
     return isinstance(feature, dict) and feature.get(name) is not None
 
 
