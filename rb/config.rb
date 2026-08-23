@@ -19,6 +19,9 @@ module BizFactoryConfig
     {
       "main" => {
         "name" => "BizFactory",
+        "slug" => "biz-factory",
+        "version" => "0.0.1",
+        "target" => "rb",
       },
       "feature" => {
         "test" => {
