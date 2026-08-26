@@ -28,6 +28,7 @@ module BizFactoryConfig
           "options" => {
             "active" => false,
           },
+          "transport" => "base",
         },
       },
       "options" => {
