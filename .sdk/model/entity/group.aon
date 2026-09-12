@@ -40,9 +40,13 @@ main: kit: entity: group: {
         {
           method: "GET"
           orig: "/group/info"
-          parts: [
-            "group"
-            "info"
+          segments: [
+            {
+              lit: "group"
+            }
+            {
+              lit: "info"
+            }
           ]
           select: {
             "$action": "info"

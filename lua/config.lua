@@ -63,9 +63,13 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/group/info",
-                ["parts"] = {
-                  "group",
-                  "info",
+                ["segments"] = {
+                  {
+                    ["lit"] = "group",
+                  },
+                  {
+                    ["lit"] = "info",
+                  },
                 },
                 ["select"] = {
                   ["$action"] = "info",
@@ -73,6 +77,10 @@ local function make_config()
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body.resources`",
+                },
+                ["parts"] = {
+                  "group",
+                  "info",
                 },
               },
             },

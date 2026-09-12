@@ -75,9 +75,13 @@ module BizFactoryConfig
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/group/info",
-                  "parts" => [
-                    "group",
-                    "info",
+                  "segments" => [
+                    {
+                      "lit" => "group",
+                    },
+                    {
+                      "lit" => "info",
+                    },
                   ],
                   "select" => {
                     "$action" => "info",
@@ -86,6 +90,10 @@ module BizFactoryConfig
                     "req" => "`reqdata`",
                     "res" => "`body.resources`",
                   },
+                  "parts" => [
+                    "group",
+                    "info",
+                  ],
                 },
               ],
             },
