@@ -28,7 +28,7 @@ loading a specific record.
 ### 1. Create a client
 
 ```ts
-import { BizFactorySDK } from '@voxgig-sdk/biz-factory'
+import { BizFactorySDK } from '@voxgig-sdk/biz-factory-sdk'
 
 const client = new BizFactorySDK()
 ```
@@ -411,7 +411,7 @@ biz-factory/
 Import the SDK from the package root:
 
 ```ts
-import { BizFactorySDK } from '@voxgig-sdk/biz-factory'
+import { BizFactorySDK } from '@voxgig-sdk/biz-factory-sdk'
 ```
 
 ### Entity state
