@@ -38,6 +38,12 @@ main: kit: entity: group: {
       name: "list"
       points: [
         {
+          contract: {
+            id: "GET /group/info"
+            json: "{\"operationId\":\"getGroupInfo\",\"parameters\":[],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"description\":{\"example\":\"A Telegram group dedicated to sharing paid methods, APIs, tricks, scripts, and coding resources\",\"type\":\"string\"},\"groupName\":{\"example\":\"BIZ FACTORY\",\"type\":\"string\"},\"inviteLink\":{\"example\":\"https://t.me/+NaATB64x9z4zNTZl\",\"type\":\"string\"},\"memberCount\":{\"example\":1000,\"type\":\"integer\"},\"resources\":{\"example\":[\"Paid methods\",\"APIs\",\"Tricks\",\"Scripts\",\"Coding resources\"],\"items\":{\"type\":\"string\"},\"type\":\"array\"}},\"type\":\"object\"}}},\"description\":\"Successful response with group information\"},\"404\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"error\":{\"example\":\"Group not found\",\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Group not found\"},\"500\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"error\":{\"example\":\"Internal server error\",\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Internal server error\"}},\"securitySource\":\"unspecified\"}"
+            source: "openapi3"
+            version: 1
+          }
           method: "GET"
           orig: "/group/info"
           segments: [

@@ -4,7 +4,10 @@ declare(strict_types=1);
 // BizFactory SDK feature factory
 
 require_once __DIR__ . '/feature/BaseFeature.php';
+require_once __DIR__ . '/feature/RatelimitFeature.php';
+require_once __DIR__ . '/feature/RetryFeature.php';
 require_once __DIR__ . '/feature/TestFeature.php';
+require_once __DIR__ . '/feature/TimeoutFeature.php';
 
 
 class BizFactoryFeatures
@@ -14,8 +17,14 @@ class BizFactoryFeatures
         switch ($name) {
             case "base":
                 return new BizFactoryBaseFeature();
+            case "ratelimit":
+                return new BizFactoryRatelimitFeature();
+            case "retry":
+                return new BizFactoryRetryFeature();
             case "test":
                 return new BizFactoryTestFeature();
+            case "timeout":
+                return new BizFactoryTimeoutFeature();
             default:
                 return new BizFactoryBaseFeature();
         }
@@ -31,7 +40,10 @@ class BizFactoryFeatures
     {
         switch ($name) {
             case "base":
+            case "ratelimit":
+            case "retry":
             case "test":
+            case "timeout":
                 return true;
             default:
                 return false;
